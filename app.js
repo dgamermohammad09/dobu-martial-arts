@@ -1,7 +1,4 @@
-// DoBu Martial Arts - Core Interactive Functionality
-// BTEC Unit 13: Website Design & Development
 
-// Theme Manager: Auto-detects system theme & supports manual toggle
 (function initTheme() {
     const savedTheme = localStorage.getItem('dobu_theme');
     const prefersDarkQuery = window.matchMedia('(prefers-color-scheme: dark)');
@@ -12,7 +9,6 @@
         } else if (theme === 'light') {
             document.documentElement.setAttribute('data-theme', 'light');
         } else {
-            // Auto: Detect system theme
             document.documentElement.removeAttribute('data-theme');
             if (prefersDarkQuery.matches) {
                 document.documentElement.setAttribute('data-theme', 'dark');
@@ -23,10 +19,8 @@
         updateThemeToggleIcons();
     }
 
-    // Apply immediately to prevent flash
     applyTheme(savedTheme || 'auto');
 
-    // Automatically respond to system theme changes in real time
     prefersDarkQuery.addEventListener('change', (e) => {
         const currentSaved = localStorage.getItem('dobu_theme');
         if (!currentSaved || currentSaved === 'auto') {
@@ -60,7 +54,6 @@ function updateThemeToggleIcons() {
     });
 }
 
-// Initialize default storage data if not present
 (function initStorage() {
     if (!localStorage.getItem('dobu_users')) {
         const defaultUsers = [
@@ -126,7 +119,6 @@ function updateThemeToggleIcons() {
     }
 })();
 
-// Helper to get currently logged in user
 function getCurrentUser() {
     try {
         const user = localStorage.getItem('dobu_current_user');
@@ -136,7 +128,6 @@ function getCurrentUser() {
     }
 }
 
-// Helper to set logged in user
 function setCurrentUser(user) {
     if (user) {
         localStorage.setItem('dobu_current_user', JSON.stringify(user));
@@ -146,7 +137,6 @@ function setCurrentUser(user) {
     updateNavAuth();
 }
 
-// Update Header Navigation to reflect logged-in state across all pages
 function updateNavAuth() {
     const navBtn = document.querySelector('.nav-btn');
     if (!navBtn) return;
@@ -162,7 +152,6 @@ function updateNavAuth() {
     }
 }
 
-// Show a clean, modern toast notification
 function showNotification(message, type = 'success') {
     let container = document.getElementById('dobu-toast-container');
     if (!container) {
@@ -213,7 +202,6 @@ function showNotification(message, type = 'success') {
     }, 3500);
 }
 
-// BOOKING HELPER: Adds a booking for current user
 function bookSession(sessionData) {
     const user = getCurrentUser();
     let bookings = [];
@@ -243,7 +231,6 @@ function bookSession(sessionData) {
     }
 }
 
-// Cancel Booking helper
 function cancelBooking(bookingId, callback) {
     try {
         let bookings = JSON.parse(localStorage.getItem('dobu_bookings') || '[]');
@@ -256,7 +243,6 @@ function cancelBooking(bookingId, callback) {
     }
 }
 
-// Global modal helper for popups (Forums, Booking, Details)
 function openModal(title, contentHtml) {
     let modal = document.getElementById('dobu-modal');
     if (!modal) {
@@ -292,7 +278,6 @@ function closeModal() {
     if (modal) modal.classList.remove('active');
 }
 
-// Open Forum Modal
 function openForumModal() {
     let posts = [];
     try {
@@ -371,7 +356,6 @@ function openForumModal() {
     }
 }
 
-// Open Private Tuition Booking Modal
 function openPrivateTuitionModal(coachName = 'Mauricio Gomez') {
     const coaches = [
         'Mauricio Gomez (Head Coach - Judo, BJJ, Karate, Muay Thai)',
@@ -446,7 +430,6 @@ function openPrivateTuitionModal(coachName = 'Mauricio Gomez') {
     }
 }
 
-// Open Free Trial Pass Modal
 function openTrialPassModal() {
     const contentHtml = `
         <p>Claim your complimentary 1-Day Trial Pass to experience our martial arts dojo, fitness suite, sauna, and steam room.</p>
@@ -487,7 +470,6 @@ function openTrialPassModal() {
     }
 }
 
-// Utility: escape HTML
 function escapeHtml(str) {
     if (!str) return '';
     return String(str)
@@ -498,11 +480,9 @@ function escapeHtml(str) {
         .replace(/'/g, '&#039;');
 }
 
-// DOM Ready Handler
 document.addEventListener('DOMContentLoaded', () => {
     updateNavAuth();
 
-    // Setup responsive mobile navigation toggle across all pages
     const mainHeader = document.querySelector('.main-header');
     if (mainHeader && !mainHeader.querySelector('.mobile-menu-toggle')) {
         const toggleBtn = document.createElement('button');
@@ -520,7 +500,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 toggleBtn.classList.toggle('active');
             });
 
-            // Close mobile menu on link click
             nav.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
                     nav.classList.remove('mobile-open');
@@ -528,7 +507,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             });
 
-            // Close when clicking outside
             document.addEventListener('click', (e) => {
                 if (!mainHeader.contains(e.target)) {
                     nav.classList.remove('mobile-open');
@@ -538,7 +516,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Setup Dark Mode toggle button in header
     if (mainHeader && !mainHeader.querySelector('.theme-toggle-btn')) {
         const themeBtn = document.createElement('button');
         themeBtn.type = 'button';
@@ -557,7 +534,6 @@ document.addEventListener('DOMContentLoaded', () => {
         updateThemeToggleIcons();
     }
 
-    // Hook up any member forum buttons
     document.querySelectorAll('.btn-forums, .action-btn').forEach(btn => {
         if (btn.textContent.includes('FORUM')) {
             btn.addEventListener('click', (e) => {
@@ -567,7 +543,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Hook up trial pass buttons
     document.querySelectorAll('.btn-trial, [data-action="trial"]').forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
@@ -575,7 +550,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Hook up private tuition buttons
     document.querySelectorAll('.btn-private-tuition, [data-action="private-tuition"]').forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
@@ -584,11 +558,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Initialize interactive calculator on pricing page
     initPricingCalculator();
 });
 
-// Interactive Pricing Calculator
 function initPricingCalculator() {
     const memSelect = document.getElementById('calc-membership');
     const tuitionInput = document.getElementById('calc-private-tuition');
