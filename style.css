@@ -141,18 +141,255 @@ main {
     margin-bottom: 40px;
 }
 
-.hero-card {
-    background-color: var(--accent-red);
-    color: white;
-    text-align: center;
-    padding: 60px 20px;
+/* Modern Athletic Split Hero Section */
+.home-hero-split {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 36px;
+    align-items: center;
+    background: #ffffff;
+    border: var(--border-thick);
+    box-shadow: var(--shadow-hard);
+    border-radius: 12px;
+    padding: 40px 36px;
+    margin-bottom: 40px;
+    position: relative;
 }
 
-.hero-card h2 { 
-    font-family: 'Arial Black', sans-serif; 
-    font-size: 48px; 
-    margin: 0 0 10px 0; 
-    letter-spacing: -1px; 
+:root[data-theme="dark"] .home-hero-split {
+    background: #181c24;
+    border-color: #3b4252;
+    box-shadow: 8px 8px 0px #000000;
+}
+
+.hero-left-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--accent-yellow);
+    color: #000000;
+    border: 2px solid #000000;
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+:root[data-theme="dark"] .hero-tag {
+    background: #f59e0b;
+    color: #000000;
+}
+
+.hero-main-title {
+    font-family: 'Arial Black', -apple-system, sans-serif;
+    font-size: 42px;
+    line-height: 1.12;
+    letter-spacing: -1px;
+    margin: 0 0 14px 0;
+    color: #000000;
+    text-transform: uppercase;
+}
+
+:root[data-theme="dark"] .hero-main-title {
+    color: #ffffff;
+}
+
+.hero-main-title span {
+    color: var(--accent-red);
+}
+
+.hero-lead-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #4b5563;
+    margin: 0 0 20px 0;
+}
+
+:root[data-theme="dark"] .hero-lead-text {
+    color: #94a3b8;
+}
+
+.hero-features-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 14px;
+    margin: 0 0 24px 0;
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.hero-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+:root[data-theme="dark"] .hero-feature-item {
+    color: #e2e8f0;
+}
+
+.hero-feature-item .check-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #10b981;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 900;
+    flex-shrink: 0;
+}
+
+.hero-actions-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+
+.btn-hero-red {
+    background: var(--accent-red);
+    color: #ffffff !important;
+    border: var(--border-thick);
+    box-shadow: 4px 4px 0px #000000;
+    padding: 12px 20px;
+    font-weight: 900;
+    font-size: 13.5px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.1s;
+    font-family: inherit;
+}
+
+.btn-hero-red:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px #000000;
+}
+
+.btn-hero-dark {
+    background: #000000;
+    color: #ffffff !important;
+    border: var(--border-thick);
+    box-shadow: 4px 4px 0px #000000;
+    padding: 12px 20px;
+    font-weight: 900;
+    font-size: 13.5px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.1s;
+    font-family: inherit;
+}
+
+:root[data-theme="dark"] .btn-hero-dark {
+    background: #252b36;
+    border-color: #3b4252;
+}
+
+.btn-hero-dark:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px #000000;
+}
+
+.hero-social-proof {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #6b7280;
+    font-weight: 600;
+}
+
+:root[data-theme="dark"] .hero-social-proof {
+    color: #94a3b8;
+}
+
+.hero-social-proof .stars {
+    color: #f59e0b;
+    letter-spacing: 1px;
+}
+
+/* Right Visual Showcase */
+.hero-right-visual {
+    position: relative;
+    width: 100%;
+}
+
+.hero-visual-card {
+    background: #000000;
+    border: var(--border-thick);
+    box-shadow: 8px 8px 0px #000000;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+:root[data-theme="dark"] .hero-visual-card {
+    border-color: #3b4252;
+    box-shadow: 6px 6px 0px #000000;
+}
+
+.hero-visual-card img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-visual-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 65%, transparent 100%);
+    padding: 18px 16px 12px 16px;
+    color: #ffffff;
+}
+
+.hero-overlay-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.hero-floating-pill {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: var(--accent-red);
+    color: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 10.5px;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    box-shadow: 3px 3px 0px #000000;
+    text-transform: uppercase;
 }
 
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
@@ -706,12 +943,13 @@ tr:nth-child(even) {
     .home-hero-split {
         grid-template-columns: 1fr;
         padding: 30px 20px;
+        gap: 24px;
     }
     .hero-main-title {
         font-size: 32px;
     }
-    .hero-right-visual img {
-        height: 250px;
+    .hero-visual-card img {
+        height: 260px;
     }
     .grid-2 {
         grid-template-columns: 1fr;
@@ -726,10 +964,13 @@ tr:nth-child(even) {
         font-size: 26px;
     }
     .hero-main-title {
-        font-size: 28px;
+        font-size: 26px;
     }
     .home-hero-split {
-        padding: 24px 16px;
+        padding: 22px 16px;
+    }
+    .hero-features-list {
+        grid-template-columns: 1fr;
     }
     .hero-actions-row {
         flex-direction: column;
@@ -738,6 +979,7 @@ tr:nth-child(even) {
     .btn-hero-red, .btn-hero-dark {
         text-align: center;
         justify-content: center;
+        width: 100%;
     }
     .grid-3, .grid-container {
         grid-template-columns: 1fr;
