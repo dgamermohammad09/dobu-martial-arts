@@ -275,23 +275,6 @@
                 refreshView();
             });
 
-            // Social Logins (Google, Facebook, X)
-            document.querySelectorAll('.social-btn').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const provider = btn.getAttribute('data-provider') || 'Social';
-                    const demoUser = {
-                        name: 'Demo Member (' + provider + ')',
-                        email: provider.toLowerCase() + '.user@dobu.com',
-                        password: 'password123',
-                        plan: 'Elite Unlimited (£60/month)',
-                        joined: new Date().toISOString().split('T')[0],
-                        memberId: 'DB-' + Math.floor(1000 + Math.random() * 9000)
-                    };
-                    setCurrentUser(demoUser);
-                    showNotification(`Instant sign in via ${provider} successful!`);
-                    refreshView();
-                });
-            });
 
             // Render Dashboard Details
             function renderDashboard(user) {
