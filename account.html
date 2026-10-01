@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoBu Martial Arts - Login & Membership</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-page">
+    <header class="main-header">
+        <a href="index.html" class="logo-container">
+            <span class="logo-icon">🥋</span>
+            <h1>DoBu Martial Arts</h1>
+        </a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="timetable.html">Timetable</a>
+            <a href="instructors.html">Instructors</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="account.html" class="nav-btn">LOGIN</a>
+        </nav>
+    </header>
+    <main>
+        <!-- LOGIN CARD (Original UI Preserved) -->
+        <div class="login-container" id="login-card">
+            <h2>LOGIN</h2>
+            <form id="login-form">
+                <div class="input-group">
+                    <label for="email">EMAIL</label>
+                    <input type="email" id="email" placeholder="your@email.com" required autocomplete="email">
+                </div>
+                <div class="input-group">
+                    <label for="password">PASSWORD</label>
+                    <input type="password" id="password" placeholder="........" required autocomplete="current-password">
+                </div>
+                <button type="submit" class="sign-in-btn">SIGN IN</button>
+            </form>
+            
+            <div class="divider">
+                <span>OR</span>
+            </div>
+            
+            <div class="social-logins">
+                <button type="button" class="social-btn" title="Quick Login with Google" data-provider="Google">G</button>
+                <button type="button" class="social-btn" title="Quick Login with Facebook" data-provider="Facebook">F</button>
+                <button type="button" class="social-btn" title="Quick Login with X" data-provider="X">X</button>
+            </div>
+            
+            <p class="signup-text">Don't have an account? <a href="#" id="link-show-signup">Sign up</a></p>
+        </div>
+
+        <!-- SIGN UP CARD (Exact same UI style) -->
+        <div class="login-container" id="signup-card" style="display: none;">
+            <h2>SIGN UP</h2>
+            <form id="signup-form">
+                <div class="input-group">
+                    <label for="signup-name">FULL NAME</label>
+                    <input type="text" id="signup-name" placeholder="John Doe" required autocomplete="name">
+                </div>
+                <div class="input-group">
+                    <label for="signup-email">EMAIL</label>
+                    <input type="email" id="signup-email" placeholder="your@email.com" required autocomplete="email">
+                </div>
+                <div class="input-group">
+                    <label for="signup-password">PASSWORD</label>
+                    <input type="password" id="signup-password" placeholder="Min. 6 characters" required autocomplete="new-password">
+                </div>
+                <div class="input-group">
+                    <label for="signup-plan">MEMBERSHIP PLAN</label>
+                    <select id="signup-plan" style="width:100%; padding:12px; border:2px solid #000; border-radius:4px; font-weight:bold; font-size:14px; background:#fff;">
+                        <option value="Basic (£25/month)">Basic (£25/mo - 1 art, 2 sessions/wk)</option>
+                        <option value="Intermediate (£35/month)">Intermediate (£35/mo - 1 art, 3 sessions/wk)</option>
+                        <option value="Advanced (£45/month)">Advanced (£45/mo - 2 arts, 5 sessions/wk)</option>
+                        <option value="Elite Unlimited (£60/month)" selected>Elite Unlimited (£60/mo - All Access)</option>
+                        <option value="Junior Membership (£25/month)">Junior Kids Membership (£25/mo)</option>
+                        <option value="6-Week Self-Defence (£180)">6-Week Beginners Self-Defence (£180)</option>
+                    </select>
+                </div>
+                <button type="submit" class="sign-in-btn">CREATE ACCOUNT</button>
+            </form>
+            
+            <div class="divider">
+                <span>OR</span>
+            </div>
+            
+            <div class="social-logins">
+                <button type="button" class="social-btn" title="Sign up with Google" data-provider="Google">G</button>
+                <button type="button" class="social-btn" title="Sign up with Facebook" data-provider="Facebook">F</button>
+                <button type="button" class="social-btn" title="Sign up with X" data-provider="X">X</button>
+            </div>
+            
+            <p class="signup-text">Already have an account? <a href="#" id="link-show-login">Sign in</a></p>
+        </div>
+
+        <!-- MEMBER DASHBOARD (Shown when logged in) -->
+        <div class="account-dashboard-card" id="dashboard-card" style="display: none;">
+            <div class="dashboard-top">
+                <div class="member-badge">MEMBER PORTAL</div>
+                <h2 id="dash-user-name">Welcome Back!</h2>
+                <p id="dash-user-email" class="dash-subtitle">member@dobu.com</p>
+            </div>
+
+            <div class="dash-grid">
+                <div class="dash-box">
+                    <span class="dash-label">CURRENT MEMBERSHIP</span>
+                    <h3 id="dash-user-plan" class="dash-plan-title">Elite Unlimited</h3>
+                    <span class="status-pill">ACTIVE &bull; AUTOMATIC RENEWAL</span>
+                    <div style="margin-top:15px;">
+                        <label for="change-plan-select" style="font-weight:bold; font-size:12px; display:block; margin-bottom:5px;">CHANGE MEMBERSHIP TIER:</label>
+                        <div style="display:flex; gap:8px;">
+                            <select id="change-plan-select" style="flex:1; padding:8px; border:2px solid #000; border-radius:4px; font-weight:bold;">
+                                <option value="Basic (£25/month)">Basic (£25/mo)</option>
+                                <option value="Intermediate (£35/month)">Intermediate (£35/mo)</option>
+                                <option value="Advanced (£45/month)">Advanced (£45/mo)</option>
+                                <option value="Elite Unlimited (£60/month)">Elite Unlimited (£60/mo)</option>
+                                <option value="Junior Membership (£25/month)">Junior Membership (£25/mo)</option>
+                            </select>
+                            <button id="btn-update-plan" class="action-btn" style="padding:8px 12px; font-size:12px;">UPDATE</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dash-box">
+                    <span class="dash-label">MEMBER DETAILS</span>
+                    <ul class="member-details-list">
+                        <li><strong>Member ID:</strong> <span id="dash-member-id">DB-7193</span></li>
+                        <li><strong>Facility Access:</strong> Dojo Mats, Gym, Sauna & Steam Room</li>
+                        <li><strong>Emergency Contact:</strong> On File</li>
+                        <li><strong>Status:</strong> Good Standing</li>
+                    </ul>
+                    <div style="display:flex; gap:8px; margin-top:12px;">
+                        <button class="action-btn btn-forums" style="flex:1; padding:10px; font-size:12px; background:#4a90e2;">MEMBER FORUMS</button>
+                        <a href="timetable.html" class="action-btn" style="flex:1; padding:10px; font-size:12px; text-align:center; text-decoration:none; background:#000;">BOOK CLASS</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dash-section">
+                <h3>MY UPCOMING BOOKED CLASSES</h3>
+                <div id="dash-bookings-container">
+                    <!-- Loaded dynamically -->
+                </div>
+            </div>
+
+            <div style="margin-top:25px; text-align:center;">
+                <button id="btn-logout" class="sign-in-btn" style="background-color:#222; max-width:250px; margin:auto;">LOG OUT</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loginCard = document.getElementById('login-card');
+            const signupCard = document.getElementById('signup-card');
+            const dashboardCard = document.getElementById('dashboard-card');
+            const linkShowSignup = document.getElementById('link-show-signup');
+            const linkShowLogin = document.getElementById('link-show-login');
+
+            // URL query parameters check (e.g. ?action=signup&plan=Elite)
+            const urlParams = new URLSearchParams(window.location.search);
+            const initialAction = urlParams.get('action');
+            const selectedPlan = urlParams.get('plan');
+
+            if (selectedPlan) {
+                const planSelect = document.getElementById('signup-plan');
+                for (let i = 0; i < planSelect.options.length; i++) {
+                    if (planSelect.options[i].value.toLowerCase().includes(selectedPlan.toLowerCase())) {
+                        planSelect.selectedIndex = i;
+                        break;
+                    }
+                }
+            }
+
+            function refreshView() {
+                const currentUser = getCurrentUser();
+                if (currentUser) {
+                    // Show Dashboard
+                    loginCard.style.display = 'none';
+                    signupCard.style.display = 'none';
+                    dashboardCard.style.display = 'block';
+                    renderDashboard(currentUser);
+                } else if (initialAction === 'signup' || window.location.hash === '#signup') {
+                    // Show Sign Up
+                    loginCard.style.display = 'none';
+                    signupCard.style.display = 'block';
+                    dashboardCard.style.display = 'none';
+                } else {
+                    // Show Login
+                    loginCard.style.display = 'block';
+                    signupCard.style.display = 'none';
+                    dashboardCard.style.display = 'none';
+                }
+                updateNavAuth();
+            }
+
+            linkShowSignup.addEventListener('click', (e) => {
+                e.preventDefault();
+                loginCard.style.display = 'none';
+                signupCard.style.display = 'block';
+            });
+
+            linkShowLogin.addEventListener('click', (e) => {
+                e.preventDefault();
+                signupCard.style.display = 'none';
+                loginCard.style.display = 'block';
+            });
+
+            // Login Form Submit
+            document.getElementById('login-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const emailInput = document.getElementById('email').value.trim().toLowerCase();
+                const passInput = document.getElementById('password').value;
+
+                let users = [];
+                try {
+                    users = JSON.parse(localStorage.getItem('dobu_users') || '[]');
+                } catch(err) {
+                    users = [];
+                }
+
+                // Check stored users or fallback for easy testing
+                let foundUser = users.find(u => u.email.toLowerCase() === emailInput && u.password === passInput);
+                
+                // Allow direct login with demo credentials or any email if password provided
+                if (!foundUser) {
+                    if (emailInput === 'member@dobu.com' && passInput === 'password123') {
+                        foundUser = {
+                            name: 'Alex Johnson',
+                            email: 'member@dobu.com',
+                            password: 'password123',
+                            plan: 'Elite Unlimited (£60/month)',
+                            joined: '2026-01-10',
+                            memberId: 'DB-8921'
+                        };
+                    } else if (users.find(u => u.email.toLowerCase() === emailInput)) {
+                        showNotification('Incorrect password. Please try again.', 'error');
+                        return;
+                    } else {
+                        // Create user on the fly if valid format
+                        foundUser = {
+                            name: emailInput.split('@')[0].toUpperCase(),
+                            email: emailInput,
+                            password: passInput,
+                            plan: 'Elite Unlimited (£60/month)',
+                            joined: new Date().toISOString().split('T')[0],
+                            memberId: 'DB-' + Math.floor(1000 + Math.random() * 9000)
+                        };
+                        users.push(foundUser);
+                        localStorage.setItem('dobu_users', JSON.stringify(users));
+                    }
+                }
+
+                setCurrentUser(foundUser);
+                showNotification(`Welcome back, ${foundUser.name}!`);
+                refreshView();
+            });
+
+            // Signup Form Submit
+            document.getElementById('signup-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = document.getElementById('signup-name').value.trim();
+                const email = document.getElementById('signup-email').value.trim().toLowerCase();
+                const password = document.getElementById('signup-password').value;
+                const plan = document.getElementById('signup-plan').value;
+
+                if (!name || !email || !password) {
+                    showNotification('Please fill in all required fields.', 'error');
+                    return;
+                }
+
+                let users = JSON.parse(localStorage.getItem('dobu_users') || '[]');
+                if (users.some(u => u.email.toLowerCase() === email)) {
+                    showNotification('An account with this email already exists. Please log in.', 'error');
+                    signupCard.style.display = 'none';
+                    loginCard.style.display = 'block';
+                    document.getElementById('email').value = email;
+                    return;
+                }
+
+                const newUser = {
+                    name: name,
+                    email: email,
+                    password: password,
+                    plan: plan,
+                    joined: new Date().toISOString().split('T')[0],
+                    memberId: 'DB-' + Math.floor(1000 + Math.random() * 9000)
+                };
+
+                users.push(newUser);
+                localStorage.setItem('dobu_users', JSON.stringify(users));
+                setCurrentUser(newUser);
+
+                showNotification(`Account created successfully! Welcome to DoBu Martial Arts, ${newUser.name}.`);
+                refreshView();
+            });
+
+            // Social Logins (Google, Facebook, X)
+            document.querySelectorAll('.social-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const provider = btn.getAttribute('data-provider') || 'Social';
+                    const demoUser = {
+                        name: 'Demo Member (' + provider + ')',
+                        email: provider.toLowerCase() + '.user@dobu.com',
+                        password: 'password123',
+                        plan: 'Elite Unlimited (£60/month)',
+                        joined: new Date().toISOString().split('T')[0],
+                        memberId: 'DB-' + Math.floor(1000 + Math.random() * 9000)
+                    };
+                    setCurrentUser(demoUser);
+                    showNotification(`Instant sign in via ${provider} successful!`);
+                    refreshView();
+                });
+            });
+
+            // Render Dashboard Details
+            function renderDashboard(user) {
+                document.getElementById('dash-user-name').textContent = `Welcome Back, ${user.name}`;
+                document.getElementById('dash-user-email').textContent = user.email;
+                document.getElementById('dash-user-plan').textContent = user.plan || 'Elite Unlimited (£60/month)';
+                document.getElementById('dash-member-id').textContent = user.memberId || 'DB-7193';
+
+                // Render Bookings
+                renderBookingsList();
+            }
+
+            function renderBookingsList() {
+                const container = document.getElementById('dash-bookings-container');
+                let bookings = [];
+                try {
+                    bookings = JSON.parse(localStorage.getItem('dobu_bookings') || '[]');
+                } catch(e) {
+                    bookings = [];
+                }
+
+                if (bookings.length === 0) {
+                    container.innerHTML = `
+                        <div class="empty-state">
+                            <p>No upcoming booked sessions.</p>
+                            <a href="timetable.html" class="action-btn" style="text-decoration:none; display:inline-block; font-size:12px; margin-top:8px;">EXPLORE TIMETABLE & BOOK</a>
+                        </div>
+                    `;
+                    return;
+                }
+
+                let html = '<div class="booking-cards-list">';
+                bookings.forEach(b => {
+                    html += `
+                        <div class="booking-row">
+                            <div class="booking-info">
+                                <strong>${escapeHtml(b.title)}</strong>
+                                <span class="booking-meta">${escapeHtml(b.day)} &bull; ${escapeHtml(b.time)} &bull; Coach: ${escapeHtml(b.instructor)}</span>
+                            </div>
+                            <button class="btn-cancel-booking" data-id="${b.id}">Cancel</button>
+                        </div>
+                    `;
+                });
+                html += '</div>';
+                container.innerHTML = html;
+
+                container.querySelectorAll('.btn-cancel-booking').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const id = btn.getAttribute('data-id');
+                        cancelBooking(id, () => {
+                            renderBookingsList();
+                        });
+                    });
+                });
+            }
+
+            // Update plan button
+            document.getElementById('btn-update-plan').addEventListener('click', () => {
+                const newPlan = document.getElementById('change-plan-select').value;
+                const user = getCurrentUser();
+                if (user) {
+                    user.plan = newPlan;
+                    setCurrentUser(user);
+
+                    // Also update in users list
+                    let users = JSON.parse(localStorage.getItem('dobu_users') || '[]');
+                    const idx = users.findIndex(u => u.email === user.email);
+                    if (idx !== -1) {
+                        users[idx].plan = newPlan;
+                        localStorage.setItem('dobu_users', JSON.stringify(users));
+                    }
+
+                    document.getElementById('dash-user-plan').textContent = newPlan;
+                    showNotification(`Membership updated to ${newPlan}!`);
+                }
+            });
+
+            // Logout
+            document.getElementById('btn-logout').addEventListener('click', () => {
+                setCurrentUser(null);
+                window.history.replaceState({}, document.title, 'account.html');
+                showNotification('Logged out successfully.', 'info');
+                loginCard.style.display = 'block';
+                signupCard.style.display = 'none';
+                dashboardCard.style.display = 'none';
+                updateNavAuth();
+            });
+
+            // Initialize on page load
+            refreshView();
+        });
+    </script>
+</body>
+</html>

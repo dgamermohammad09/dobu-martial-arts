@@ -1,0 +1,10 @@
+# Build and temporary files
+*.docx
+*.pdf
+*.log
+screenshots/
+__pycache__/
+*.pyc
+build_pass_word_doc.py
+generate_*.py
+temp_*

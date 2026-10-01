@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoBu Martial Arts - Expert Coaches & Instructors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <a href="index.html" class="logo-container">
+            <span class="logo-icon">🥋</span>
+            <h1>DoBu Martial Arts</h1>
+        </a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="timetable.html">Timetable</a>
+            <a href="instructors.html" class="active">Instructors</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="account.html" class="nav-btn">LOGIN</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <h2 class="page-title">MEET OUR ACCREDITED COACHES</h2>
+            <p class="page-subtitle">
+                Learn from internationally certified black belts and sports science graduates. 
+                Private 1-on-1 martial arts tuition is available from £15.00/hour, and personal fitness training from £35.00/hour.
+            </p>
+        </div>
+
+        <!-- COACH FILTER TABS -->
+        <div class="timetable-controls" style="justify-content:center; margin-bottom:30px;">
+            <div class="filter-group">
+                <button type="button" class="filter-btn active" data-coach-filter="all">ALL COACHES (6)</button>
+                <button type="button" class="filter-btn" data-coach-filter="combat">MARTIAL ARTS INSTRUCTORS (4)</button>
+                <button type="button" class="filter-btn" data-coach-filter="fitness">FITNESS & PHYSIOTHERAPY (2)</button>
+            </div>
+        </div>
+
+        <div class="grid-container" id="coaches-grid">
+            <!-- Mauricio Gomez -->
+            <div class="card" data-category="combat">
+                <img src="images/coach_mauricio.jpg" alt="Mauricio Gomez" class="profile-img">
+                <span class="badge" style="background:var(--accent-red); color:#fff;">HEAD COACH / OWNER</span>
+                <h3>MAURICIO GOMEZ</h3>
+                <div class="coach-specialty">All Combat Disciplines & Mat Director</div>
+                <ul class="coach-qualifications">
+                    <li>4th Dan Blackbelt Judo</li>
+                    <li>3rd Dan Blackbelt Jiu-Jitsu</li>
+                    <li>1st Dan Blackbelt Karate</li>
+                    <li>Accredited Muay Thai Coach</li>
+                </ul>
+                <div class="coach-btn-group">
+                    <button type="button" class="action-btn action-btn-red btn-private-tuition" data-coach="Mauricio Gomez">BOOK PRIVATE TUITION (£15/HR)</button>
+                    <a href="timetable.html" class="action-btn" style="text-align:center; background:#222; font-size:13px;">VIEW CLASS SCHEDULE</a>
+                </div>
+            </div>
+
+            <!-- Sarah Nova -->
+            <div class="card" data-category="combat">
+                <img src="images/coach_sarah.jpg" alt="Sarah Nova" class="profile-img">
+                <span class="badge">ASST. COACH</span>
+                <h3>SARAH NOVA</h3>
+                <div class="coach-specialty">Traditional Shotokan Karate & Kata</div>
+                <ul class="coach-qualifications">
+                    <li>5th Dan Blackbelt Karate</li>
+                    <li>National Kata Championship Medalist</li>
+                    <li>Head of Belt Grading Committee</li>
+                    <li>Youth & Adult Karate Program Lead</li>
+                </ul>
+                <div class="coach-btn-group">
+                    <button type="button" class="action-btn action-btn-red btn-private-tuition" data-coach="Sarah Nova">BOOK PRIVATE TUITION (£15/HR)</button>
+                    <a href="timetable.html" class="action-btn" style="text-align:center; background:#222; font-size:13px;">VIEW CLASS SCHEDULE</a>
+                </div>
+            </div>
+
+            <!-- Guy Victory -->
+            <div class="card" data-category="combat">
+                <img src="images/coach_guy.jpg" alt="Guy Victory" class="profile-img">
+                <span class="badge">ASST. COACH</span>
+                <h3>GUY VICTORY</h3>
+                <div class="coach-specialty">Brazilian Jiu-Jitsu & Olympic Judo</div>
+                <ul class="coach-qualifications">
+                    <li>2nd Dan Blackbelt Jiu-Jitsu</li>
+                    <li>1st Dan Blackbelt Judo</li>
+                    <li>Grappling Submission Specialist</li>
+                    <li>Kids & Juniors BJJ Instructor</li>
+                </ul>
+                <div class="coach-btn-group">
+                    <button type="button" class="action-btn action-btn-red btn-private-tuition" data-coach="Guy Victory">BOOK PRIVATE TUITION (£15/HR)</button>
+                    <a href="timetable.html" class="action-btn" style="text-align:center; background:#222; font-size:13px;">VIEW CLASS SCHEDULE</a>
+                </div>
+            </div>
+
+            <!-- Morris Davis -->
+            <div class="card" data-category="combat">
+                <img src="images/coach_morris.jpg" alt="Morris Davis" class="profile-img">
+                <span class="badge">ASST. COACH</span>
+                <h3>MORRIS DAVIS</h3>
+                <div class="coach-specialty">Muay Thai Kickboxing & Striking</div>
+                <ul class="coach-qualifications">
+                    <li>Accredited Muay Thai Coach</li>
+                    <li>3rd Dan Blackbelt Karate</li>
+                    <li>Clinch Dynamics & Pad Work Specialist</li>
+                    <li>Competition Fight Team Corner</li>
+                </ul>
+                <div class="coach-btn-group">
+                    <button type="button" class="action-btn action-btn-red btn-private-tuition" data-coach="Morris Davis">BOOK PRIVATE TUITION (£15/HR)</button>
+                    <a href="timetable.html" class="action-btn" style="text-align:center; background:#222; font-size:13px;">VIEW CLASS SCHEDULE</a>
+                </div>
+            </div>
+
+            <!-- Traci Santiago -->
+            <div class="card" data-category="fitness">
+                <img src="images/coach_traci.jpg" alt="Traci Santiago" class="profile-img">
+                <span class="badge" style="background:#2a9d8f; color:#fff;">FITNESS COACH</span>
+                <h3>TRACI SANTIAGO</h3>
+                <div class="coach-specialty">Strength & Combat Conditioning</div>
+                <ul class="coach-qualifications">
+                    <li>BSc in Sports Science</li>
+                    <li>Qualified in Health & Combat Nutrition</li>
+                    <li>Specialises in S&C for Combat Athletes</li>
+                    <li>Functional Mobility & Weight Cutting</li>
+                </ul>
+                <div class="coach-btn-group">
+                    <button type="button" class="action-btn action-btn-red btn-personal-training" data-coach="Traci Santiago">BOOK PERSONAL TRAINING (£35/HR)</button>
+                    <button type="button" class="action-btn btn-trial" style="background:#222; font-size:13px;">FITNESS SUITE PASS (£6)</button>
+                </div>
+            </div>
+
+            <!-- Harpreet Kaur -->
+            <div class="card" data-category="fitness">
+                <img src="images/coach_harpreet.jpg" alt="Harpreet Kaur" class="profile-img">
+                <span class="badge" style="background:#2a9d8f; color:#fff;">FITNESS COACH</span>
+                <h3>HARPREET KAUR</h3>
+                <div class="coach-specialty">Physiotherapy & Athletic Rehabilitation</div>
+                <ul class="coach-qualifications">
+                    <li>BSc in Physiotherapy</li>
+                    <li>MSc in Sports Science</li>
+                    <li>Injury Prevention & Joint Mobilisation</li>
+                    <li>Post-Match Recovery & Core Stability</li>
+                </ul>
+                <div class="coach-btn-group">
+                    <button type="button" class="action-btn action-btn-red btn-personal-training" data-coach="Harpreet Kaur">BOOK PERSONAL TRAINING (£35/HR)</button>
+                    <button type="button" class="action-btn btn-trial" style="background:#222; font-size:13px;">FITNESS SUITE PASS (£6)</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 1-ON-1 TUITION INFO BANNER -->
+        <div class="community-banner" style="margin-top: 50px; background:#0f1115;">
+            <div>
+                <h3 style="color:var(--accent-yellow);">WHY TRAIN 1-ON-1 WITH DOBU COACHES?</h3>
+                <p>Private sessions are tailored precisely to your goals: belt grading exam prep, ring sparring strategy, body transformation, or injury rehabilitation. Sessions are scheduled during dedicated private gym hours (08:00 - 12:00).</p>
+            </div>
+            <button type="button" class="action-btn action-btn-red btn-private-tuition" style="font-size:18px;">SCHEDULE A SESSION</button>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>DOBU MARTIAL ARTS</h4>
+                <p>Premier martial arts gym, combat sports dojo, and fitness suite dedicated to excellence, discipline, and community.</p>
+                <p><strong>Affiliated:</strong> Jordan Judo Federation &bull; Jordan Muay Thai Federation &bull; Jordan Olympic Committee</p>
+            </div>
+            <div class="footer-col">
+                <h4>QUICK LINKS</h4>
+                <ul>
+                    <li><a href="index.html">Home Overview</a></li>
+                    <li><a href="timetable.html">Weekly Class Timetable</a></li>
+                    <li><a href="instructors.html">Our Coaches & Instructors</a></li>
+                    <li><a href="pricing.html">Memberships & Course Fees</a></li>
+                    <li><a href="account.html">Member Account & Login</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>OPENING HOURS</h4>
+                <p><strong>Monday – Friday:</strong> 06:00 – 21:00</p>
+                <p><strong>Saturday:</strong> 08:00 – 18:00</p>
+                <p><strong>Sunday:</strong> 08:00 – 16:00</p>
+            </div>
+            <div class="footer-col">
+                <h4>DOJO LOCATION</h4>
+                <p>Mecca Street, Building 78, Amman, Jordan</p>
+                <p><strong>Phone:</strong> +962 6 553 4890 / +962 7 9845 2210</p>
+                <p><strong>Email:</strong> mohammadaljafari@example.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 DoBu Martial Arts Gym. BTEC Unit 13 Website Design & Development.</span>
+            <span>All rights reserved. Designed for academic demonstration.</span>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Coach filtering
+            const filterBtns = document.querySelectorAll('[data-coach-filter]');
+            const cards = document.querySelectorAll('#coaches-grid .card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const filter = btn.getAttribute('data-coach-filter');
+                    cards.forEach(card => {
+                        const cat = card.getAttribute('data-category');
+                        if (filter === 'all' || cat === filter) {
+                            card.style.display = 'flex';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Personal training booking buttons
+            document.querySelectorAll('.btn-personal-training').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const coach = btn.getAttribute('data-coach') || 'Traci Santiago';
+                    const contentHtml = `
+                        <p>Book 1-on-1 Personal Fitness Training with <strong>${escapeHtml(coach)}</strong>. Fee: <strong>£35.00 / hour</strong>.</p>
+                        <form id="pt-booking-form">
+                            <div class="input-group">
+                                <label>COACH</label>
+                                <input type="text" value="${escapeHtml(coach)}" readonly style="background:#eee;">
+                            </div>
+                            <div class="input-group">
+                                <label for="pt-day">DAY</label>
+                                <select id="pt-day" style="width:100%; padding:10px; border:2px solid #000; border-radius:4px; font-weight:bold;">
+                                    <option value="Monday">Monday (08:00 - 12:00)</option>
+                                    <option value="Tuesday">Tuesday (08:00 - 12:00)</option>
+                                    <option value="Wednesday">Wednesday (08:00 - 12:00)</option>
+                                    <option value="Thursday">Thursday (08:00 - 12:00)</option>
+                                    <option value="Friday">Friday (08:00 - 12:00)</option>
+                                    <option value="Saturday">Saturday (08:00 - 12:00)</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="pt-goal">FITNESS GOAL</label>
+                                <input type="text" id="pt-goal" placeholder="e.g. Combat conditioning, hypertrophy, rehab..." required>
+                            </div>
+                            <button type="submit" class="sign-in-btn">CONFIRM PT SESSION (£35.00)</button>
+                        </form>
+                    `;
+                    openModal('BOOK PERSONAL FITNESS TRAINING', contentHtml);
+
+                    const form = document.getElementById('pt-booking-form');
+                    if (form) {
+                        form.addEventListener('submit', (e) => {
+                            e.preventDefault();
+                            const day = document.getElementById('pt-day').value;
+                            bookSession({
+                                title: `Personal Fitness (${coach})`,
+                                instructor: coach,
+                                day: day,
+                                time: '1 Hour Dedicated Slot'
+                            });
+                            closeModal();
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

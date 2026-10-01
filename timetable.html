@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoBu Martial Arts - Class Timetable & Schedule</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <a href="index.html" class="logo-container">
+            <span class="logo-icon">🥋</span>
+            <h1>DoBu Martial Arts</h1>
+        </a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="timetable.html" class="active">Timetable</a>
+            <a href="instructors.html">Instructors</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="account.html" class="nav-btn">LOGIN</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <h2 class="page-title">MARTIAL ARTS CLASS TIMETABLE</h2>
+            <p class="page-subtitle">
+                Comprehensive 7-day schedule across all combat styles, kids programs, and open mats. 
+                Click any class or "Book" button to reserve your slot directly in your member account.
+            </p>
+        </div>
+
+        <!-- TIMETABLE CONTROLS -->
+        <div class="timetable-controls">
+            <div class="filter-group">
+                <button type="button" class="filter-btn active" data-style="all">ALL CLASSES</button>
+                <button type="button" class="filter-btn" data-style="bjj">JIU-JITSU</button>
+                <button type="button" class="filter-btn" data-style="muay-thai">MUAY THAI</button>
+                <button type="button" class="filter-btn" data-style="karate">KARATE</button>
+                <button type="button" class="filter-btn" data-style="judo">JUDO</button>
+                <button type="button" class="filter-btn" data-style="kids">KIDS</button>
+                <button type="button" class="filter-btn" data-style="open">OPEN MAT</button>
+                <button type="button" class="filter-btn" data-style="private">PRIVATE</button>
+            </div>
+            <div>
+                <button type="button" id="btn-print" class="action-btn" style="background:#222; font-size:14px;">🖨️ PRINT SCHEDULE</button>
+            </div>
+        </div>
+
+        <!-- SCHEDULE TABLE -->
+        <div class="table-card">
+            <table id="schedule-table">
+                <thead>
+                    <tr>
+                        <th style="width: 14%;">TIME</th>
+                        <th style="width: 12.2%;">MON</th>
+                        <th style="width: 12.2%;">TUE</th>
+                        <th style="width: 12.2%;">WED</th>
+                        <th style="width: 12.2%;">THU</th>
+                        <th style="width: 12.2%;">FRI</th>
+                        <th style="width: 12.2%;">SAT</th>
+                        <th style="width: 12.2%;">SUN</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 06:00 - 07:30 -->
+                    <tr>
+                        <td><strong>06:00 – 07:30</strong><br><small style="color:#777;">Early Morning</small></td>
+                        <td data-style="bjj">
+                            <div class="cell-slot">
+                                <span class="cell-title">Jiu-jitsu</span>
+                                <button class="cell-book-btn" data-class="Jiu-jitsu" data-day="Monday" data-time="06:00 - 07:30" data-coach="Mauricio Gomez">BOOK</button>
+                            </div>
+                        </td>
+                        <td data-style="karate">
+                            <div class="cell-slot">
+                                <span class="cell-title">Karate</span>
+                                <button class="cell-book-btn" data-class="Karate" data-day="Tuesday" data-time="06:00 - 07:30" data-coach="Sarah Nova">BOOK</button>
+                            </div>
+                        </td>
+                        <td data-style="judo">
+                            <div class="cell-slot">
+                                <span class="cell-title">Judo</span>
+                                <button class="cell-book-btn" data-class="Judo" data-day="Wednesday" data-time="06:00 - 07:30" data-coach="Mauricio Gomez">BOOK</button>
+                            </div>
+                        </td>
+                        <td data-style="bjj">
+                            <div class="cell-slot">
+                                <span class="cell-title">Jiu-jitsu</span>
+                                <button class="cell-book-btn" data-class="Jiu-jitsu" data-day="Thursday" data-time="06:00 - 07:30" data-coach="Guy Victory">BOOK</button>
+                            </div>
+                        </td>
+                        <td data-style="muay-thai">
+                            <div class="cell-slot">
+                                <span class="cell-title">Muay Thai</span>
+                                <button class="cell-book-btn" data-class="Muay Thai" data-day="Friday" data-time="06:00 - 07:30" data-coach="Morris Davis">BOOK</button>
+                            </div>
+                        </td>
+                        <td style="color:#aaa;">&mdash;</td>
+                        <td style="color:#aaa;">&mdash;</td>
+                    </tr>
+
+                    <!-- 08:00 - 10:00 -->
+                    <tr>
+                        <td><strong>08:00 – 10:00</strong><br><small style="color:#777;">Morning Block</small></td>
+                        <td data-style="muay-thai">
+                            <div class="cell-slot">
+                                <span class="cell-title">Muay Thai</span>
+                                <button class="cell-book-btn" data-class="Muay Thai" data-day="Monday" data-time="08:00 - 10:00" data-coach="Morris Davis">BOOK</button>
+                            </div>
+                        </td>
+                        <td data-style="private">
+                            <div class="cell-slot">
+                                <span class="cell-title">Private Tuition</span>
+                                <button class="cell-book-btn btn-private-tuition" data-coach="Staff Coach">BOOK</button>
+                            </div>
+                        </td>
+                        <td data-style="private">
+                            <div class="cell-slot">
+                                <span class="cell-title">Private Tuition</span>
+                                <button class="cell-book-btn btn-private-tuition" data-coach="Staff Coach">BOOK</button>
+                            </div>
+                        </td>
+                        <td data-style="private">
+                            <div class="cell-slot">
+                                <span class="cell-title">Private Tuition</span>
+                                <button class="cell-book-btn btn-private-tuition" data-coach="Staff Coach">BOOK</button>
+                            </div>
+                        </td>
+                        <td data-style="bjj">
+                            <div class="cell-slot">
+                                <span class="cell-title">Jiu-jitsu</span>
+                                <button class="cell-book-btn" data-class="Jiu-jitsu" data-day="Friday" data-time="08:00 - 10:00" data-coach="Guy Victory">BOOK</button>
+                            </div>
+                        </td>
+                        <td data-style="private">
+                            <div class="cell-slot">
+                                <span class="cell-title">Private Tuition</span>
+                                <button class="cell-book-btn btn-private-tuition" data-coach="Staff Coach">BOOK</button>
+                            </div>
+                        </td>
+                        <td data-style="private">
+                            <div class="cell-slot">
+                                <span class="cell-title">Private Tuition</span>
+                                <button class="cell-book-btn btn-private-tuition" data-coach="Staff Coach">BOOK</button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- 10:30 - 12:00 -->
+                    <tr>
+                        <td><strong>10:30 – 12:00</strong><br><small style="color:#777;">Late Morning</small></td>
+                        <td data-style="private">
+                            <div class="cell-slot">
+                                <span class="cell-title">Private Tuition</span>
+                                <button class="cell-book-btn btn-private-tuition" data-coach="Staff Coach">BOOK</button>
+                            </div>
+                        </td>
+                        <td data-style="private">
+                            <div class="cell-slot">
+                                <span class="cell-title">Private Tuition</span>
+                                <button class="cell-book-btn btn-private-tuition" data-coach="Staff Coach">BOOK</button>
+                            </div>
+                        </td>
+                        <td data-style="private">
+                            <div class="cell-slot">
+                                <span class="cell-title">Private Tuition</span>
+                                <button class="cell-book-btn btn-private-tuition" data-coach="Staff Coach">BOOK</button>
+                            </div>
+                        </td>
+                        <td data-style="private">
+                            <div class="cell-slot">
+                                <span class="cell-title">Private Tuition</span>
+                                <button class="cell-book-btn btn-private-tuition" data-coach="Staff Coach">BOOK</button>
+                            </div>
+                        </td>
+                        <td data-style="private">
+                            <div class="cell-slot">
+                                <span class="cell-title">Private Tuition</span>
+                                <button class="cell-book-btn btn-private-tuition" data-coach="Staff Coach">BOOK</button>
+                            </div>
+                        </td>
+                        <td data-style="judo">
+                            <div class="cell-slot">
+                                <span class="cell-title">Judo</span>
+                                <button class="cell-book-btn" data-class="Judo" data-day="Saturday" data-time="10:30 - 12:00" data-coach="Mauricio Gomez">BOOK</button>
+                            </div>
+                        </td>
+                        <td data-style="karate">
+                            <div class="cell-slot">
+                                <span class="cell-title">Karate</span>
+                                <button class="cell-book-btn" data-class="Karate" data-day="Sunday" data-time="10:30 - 12:00" data-coach="Sarah Nova">BOOK</button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- 13:00 - 14:30 -->
+                    <tr>
+                        <td><strong>13:00 – 14:30</strong><br><small style="color:#777;">Afternoon</small></td>
+                        <td data-style="open">
+                            <div class="cell-slot">
+                                <span class="cell-title">Open Mat</span>
+                                <button class="cell-book-btn" data-class="Open Mat Practice" data-day="Monday" data-time="13:00 - 14:30" data-coach="Self-Guided">BOOK</button>
+                            </div>
+                        </td>
+                        <td data-style="open">
+                            <div class="cell-slot">
+                                <span class="cell-title">Open Mat</span>
+                                <button class="cell-book-btn" data-class="Open Mat Practice" data-day="Tuesday" data-time="13:00 - 14:30" data-coach="Self-Guided">BOOK</button>
+                            </div>
+                        </td>
+                        <td data-style="open">
+                            <div class="cell-slot">
+                                <span class="cell-title">Open Mat</span>
+                                <button class="cell-book-btn" data-class="Open Mat Practice" data-day="Wednesday" data-time="13:00 - 14:30" data-coach="Self-Guided">BOOK</button>
+                            </div>
+                        </td>
+                        <td data-style="open">
+                            <div class="cell-slot">
+                                <span class="cell-title">Open Mat</span>
+                                <button class="cell-book-btn" data-class="Open Mat Practice" data-day="Thursday" data-time="13:00 - 14:30" data-coach="Self-Guided">BOOK</button>
+                            </div>
+                        </td>
+                        <td data-style="open">
+                            <div class="cell-slot">
+                                <span class="cell-title">Open Mat</span>
+                                <button class="cell-book-btn" data-class="Open Mat Practice" data-day="Friday" data-time="13:00 - 14:30" data-coach="Self-Guided">BOOK</button>
+                            </div>
+                        </td>
+                        <td data-style="karate">
+                            <div class="cell-slot">
+                                <span class="cell-title">Karate</span>
+                                <button class="cell-book-btn" data-class="Karate" data-day="Saturday" data-time="13:00 - 14:30" data-coach="Sarah Nova">BOOK</button>
+                            </div>
+                        </td>
+                        <td data-style="judo">
+                            <div class="cell-slot">
+                                <span class="cell-title">Judo</span>
+                                <button class="cell-book-btn" data-class="Judo" data-day="Sunday" data-time="13:00 - 14:30" data-coach="Mauricio Gomez">BOOK</button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- 15:00 - 17:00 -->
+                    <tr>
+                        <td><strong>15:00 – 17:00</strong><br><small style="color:#777;">Youth & Juniors</small></td>
+                        <td data-style="kids">
+                            <div class="cell-slot">
+                                <span class="cell-title">Kids Jiu-jitsu</span>
+                                <button class="cell-book-btn" data-class="Kids Jiu-jitsu" data-day="Monday" data-time="15:00 - 17:00" data-coach="Guy Victory">BOOK</button>
+                            </div>
+                        </td>
+                        <td data-style="kids">
+                            <div class="cell-slot">
+                                <span class="cell-title">Kids Judo</span>
+                                <button class="cell-book-btn" data-class="Kids Judo" data-day="Tuesday" data-time="15:00 - 17:00" data-coach="Guy Victory">BOOK</button>
+                            </div>
+                        </td>
+                        <td data-style="kids">
+                            <div class="cell-slot">
+                                <span class="cell-title">Kids Karate</span>
+                                <button class="cell-book-btn" data-class="Kids Karate" data-day="Wednesday" data-time="15:00 - 17:00" data-coach="Sarah Nova">BOOK</button>
+                            </div>
+                        </td>
+                        <td data-style="kids">
+                            <div class="cell-slot">
+                                <span class="cell-title">Kids Jiu-jitsu</span>
+                                <button class="cell-book-btn" data-class="Kids Jiu-jitsu" data-day="Thursday" data-time="15:00 - 17:00" data-coach="Guy Victory">BOOK</button>
+                            </div>
+                        </td>
+                        <td data-style="kids">
+                            <div class="cell-slot">
+                                <span class="cell-title">Kids Judo</span>
+                                <button class="cell-book-btn" data-class="Kids Judo" data-day="Friday" data-time="15:00 - 17:00" data-coach="Guy Victory">BOOK</button>
+                            </div>
+                        </td>
+                        <td data-style="muay-thai">
+                            <div class="cell-slot">
+                                <span class="cell-title">Muay Thai</span>
+                                <button class="cell-book-btn" data-class="Muay Thai" data-day="Saturday" data-time="15:00 - 17:00" data-coach="Morris Davis">BOOK</button>
+                            </div>
+                        </td>
+                        <td data-style="bjj">
+                            <div class="cell-slot">
+                                <span class="cell-title">Jiu-jitsu</span>
+                                <button class="cell-book-btn" data-class="Jiu-jitsu" data-day="Sunday" data-time="15:00 - 17:00" data-coach="Mauricio Gomez">BOOK</button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- 17:30 - 19:00 -->
+                    <tr>
+                        <td><strong>17:30 – 19:00</strong><br><small style="color:#777;">Early Evening</small></td>
+                        <td data-style="karate">
+                            <div class="cell-slot">
+                                <span class="cell-title">Karate</span>
+                                <button class="cell-book-btn" data-class="Karate" data-day="Monday" data-time="17:30 - 19:00" data-coach="Sarah Nova">BOOK</button>
+                            </div>
+                        </td>
+                        <td data-style="muay-thai">
+                            <div class="cell-slot">
+                                <span class="cell-title">Muay Thai</span>
+                                <button class="cell-book-btn" data-class="Muay Thai" data-day="Tuesday" data-time="17:30 - 19:00" data-coach="Morris Davis">BOOK</button>
+                            </div>
+                        </td>
+                        <td data-style="judo">
+                            <div class="cell-slot">
+                                <span class="cell-title">Judo</span>
+                                <button class="cell-book-btn" data-class="Judo" data-day="Wednesday" data-time="17:30 - 19:00" data-coach="Mauricio Gomez">BOOK</button>
+                            </div>
+                        </td>
+                        <td data-style="bjj">
+                            <div class="cell-slot">
+                                <span class="cell-title">Jiu-jitsu</span>
+                                <button class="cell-book-btn" data-class="Jiu-jitsu" data-day="Thursday" data-time="17:30 - 19:00" data-coach="Guy Victory">BOOK</button>
+                            </div>
+                        </td>
+                        <td data-style="muay-thai">
+                            <div class="cell-slot">
+                                <span class="cell-title">Muay Thai</span>
+                                <button class="cell-book-btn" data-class="Muay Thai" data-day="Friday" data-time="17:30 - 19:00" data-coach="Morris Davis">BOOK</button>
+                            </div>
+                        </td>
+                        <td style="color:#aaa;">&mdash;</td>
+                        <td style="color:#aaa;">&mdash;</td>
+                    </tr>
+
+                    <!-- 19:00 - 21:00 -->
+                    <tr>
+                        <td><strong>19:00 – 21:00</strong><br><small style="color:#777;">Night Combat</small></td>
+                        <td data-style="bjj">
+                            <div class="cell-slot">
+                                <span class="cell-title">Jiu-jitsu</span>
+                                <button class="cell-book-btn" data-class="Jiu-jitsu (Evening)" data-day="Monday" data-time="19:00 - 21:00" data-coach="Mauricio Gomez">BOOK</button>
+                            </div>
+                        </td>
+                        <td data-style="judo">
+                            <div class="cell-slot">
+                                <span class="cell-title">Judo</span>
+                                <button class="cell-book-btn" data-class="Judo (Evening)" data-day="Tuesday" data-time="19:00 - 21:00" data-coach="Guy Victory">BOOK</button>
+                            </div>
+                        </td>
+                        <td data-style="bjj">
+                            <div class="cell-slot">
+                                <span class="cell-title">Jiu-jitsu</span>
+                                <button class="cell-book-btn" data-class="Jiu-jitsu (Evening)" data-day="Wednesday" data-time="19:00 - 21:00" data-coach="Mauricio Gomez">BOOK</button>
+                            </div>
+                        </td>
+                        <td data-style="karate">
+                            <div class="cell-slot">
+                                <span class="cell-title">Karate</span>
+                                <button class="cell-book-btn" data-class="Karate (Evening)" data-day="Thursday" data-time="19:00 - 21:00" data-coach="Morris Davis">BOOK</button>
+                            </div>
+                        </td>
+                        <td data-style="private">
+                            <div class="cell-slot">
+                                <span class="cell-title">Private Tuition</span>
+                                <button class="cell-book-btn btn-private-tuition" data-coach="Staff Coach">BOOK</button>
+                            </div>
+                        </td>
+                        <td style="color:#aaa;">&mdash;</td>
+                        <td style="color:#aaa;">&mdash;</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- TIMETABLE LEGEND -->
+        <div class="table-legend">
+            <div class="legend-item"><span class="legend-dot" style="background:#1d3557;"></span> Jiu-Jitsu (BJJ)</div>
+            <div class="legend-item"><span class="legend-dot" style="background:var(--accent-red);"></span> Muay Thai</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#2a9d8f;"></span> Shotokan Karate</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#4a90e2;"></span> Olympic Judo</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#ffb703;"></span> Kids Academy</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#e0e0e0;"></span> Open Mat</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#111418;"></span> Private Tuition</div>
+        </div>
+
+        <!-- PRIVATE TUITION CTA -->
+        <div class="community-banner" style="margin-top: 45px; background:var(--accent-red);">
+            <div>
+                <h3>NEED 1-ON-1 TECHNIQUE COACHING?</h3>
+                <p>Private martial arts tuition is available throughout the week from £15.00/hour with our accredited black belts. Work on belt grading syllabus or fight tactics.</p>
+            </div>
+            <button type="button" class="action-btn btn-private-tuition" style="background:#000; font-size:18px;">BOOK PRIVATE COACH (£15/HR)</button>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>DOBU MARTIAL ARTS</h4>
+                <p>Premier martial arts gym, combat sports dojo, and fitness suite dedicated to excellence, discipline, and community.</p>
+                <p><strong>Affiliated:</strong> Jordan Judo Federation &bull; Jordan Muay Thai Federation &bull; Jordan Olympic Committee</p>
+            </div>
+            <div class="footer-col">
+                <h4>QUICK LINKS</h4>
+                <ul>
+                    <li><a href="index.html">Home Overview</a></li>
+                    <li><a href="timetable.html">Weekly Class Timetable</a></li>
+                    <li><a href="instructors.html">Our Coaches & Instructors</a></li>
+                    <li><a href="pricing.html">Memberships & Course Fees</a></li>
+                    <li><a href="account.html">Member Account & Login</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>OPENING HOURS</h4>
+                <p><strong>Monday – Friday:</strong> 06:00 – 21:00</p>
+                <p><strong>Saturday:</strong> 08:00 – 18:00</p>
+                <p><strong>Sunday:</strong> 08:00 – 16:00</p>
+            </div>
+            <div class="footer-col">
+                <h4>DOJO LOCATION</h4>
+                <p>Mecca Street, Building 78, Amman, Jordan</p>
+                <p><strong>Phone:</strong> +962 6 553 4890 / +962 7 9845 2210</p>
+                <p><strong>Email:</strong> mohammadaljafari@example.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 DoBu Martial Arts Gym. BTEC Unit 13 Website Design & Development.</span>
+            <span>All rights reserved. Designed for academic demonstration.</span>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Style filter buttons
+            const filterBtns = document.querySelectorAll('[data-style]');
+            const cells = document.querySelectorAll('#schedule-table td[data-style]');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const selected = btn.getAttribute('data-style');
+                    cells.forEach(cell => {
+                        const style = cell.getAttribute('data-style');
+                        if (selected === 'all' || style === selected) {
+                            cell.style.opacity = '1';
+                            cell.style.backgroundColor = '';
+                        } else {
+                            cell.style.opacity = '0.2';
+                            cell.style.backgroundColor = '#f2f2f2';
+                        }
+                    });
+                });
+            });
+
+            // Booking buttons on timetable slots
+            document.querySelectorAll('.cell-book-btn').forEach(btn => {
+                // If it's not a private tuition button (handled separately)
+                if (!btn.classList.contains('btn-private-tuition')) {
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const className = btn.getAttribute('data-class');
+                        const day = btn.getAttribute('data-day');
+                        const time = btn.getAttribute('data-time');
+                        const coach = btn.getAttribute('data-coach');
+
+                        bookSession({
+                            title: className,
+                            day: day,
+                            time: time,
+                            instructor: coach
+                        });
+                    });
+                }
+            });
+
+            // Print button
+            const printBtn = document.getElementById('btn-print');
+            if (printBtn) {
+                printBtn.addEventListener('click', () => {
+                    window.print();
+                });
+            }
+        });
+    </script>
+</body>
+</html>
